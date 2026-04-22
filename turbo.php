@@ -310,6 +310,7 @@ function turbo_log($input,$type='default',$label='') {
  */
 function turbo_db_connect() {
   $db = new mysqli(DB_HOSTNAME, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
+  $db->query("SET SESSION sql_mode = ''");
   return $db;
 }
 
